@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+	/*
+	Just a note before we begin, I orginally thought that this mini-game would be draging and droping items on a list, and trying to put them in the correct order. After thinking up some ideas of how that would work, I decided that it would be hard and boring. So I went for this because it's quick for me and the player, and I think, a little more fun than odering a list, which is proably what one of the other games is going to be about. 
+
+	*/
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/rodionkutsaev82627.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var coins = localStorage.getItem("coins");
+coins = parseInt(coins);
+var coins_txt = new sjs.Text("Coins:"+ coins, 25, "yellow");
+coins_txt.right();
+var explain_txt = new sjs.Text("You must priortize which of these tasks to do. Simply click on the one you belive is most important. Be careful, you only get one chance!");
+var choice_1 = new sjs.Button("Go to the movies.", function(){
+	window.location = "losep.html";
+});
+choice_1.moveTo(explain_txt.getX(), explain_txt.getY()+50);
+var choice_2 = new sjs.Button("Lounge around.", function(){
+	window.location = "losep.html";
+});
+choice_2.moveTo(choice_1.getX(), choice_1.getY()+100);
+var choice_3 = new sjs.Button("Eat chips.", function(){
+	window.location = "losep.html";
+});
+choice_3.moveTo(choice_2.getX(),choice_2.getY()+100);
+var choice_4 = new sjs.Button("Watch TV.", function(){
+	window.location = "losep.html";
+});
+choice_4.moveTo(choice_3.getX(), choice_3.getY()+100);
+var choice_5 = new sjs.Button("Run away from pet tiger.", function(){
+	window.location = "losep.html";
+});
+choice_5.moveTo(choice_4.getX(), choice_4.getY()+100);
+var choice_6 = new sjs.Button("Visit aliling Grandma.", function(){
+	coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+	window.location = "winp.html";
+
+});
+choice_6.moveTo(choice_5.getX(), choice_5.getY()+100);
+
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/karsten-wurth-96082.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var Lesson_Text = new sjs.Text("Prioritizing. We've all heard the word. We all know what it means. We all know how to do it, in theory. What we don't seem to be able to do is actually do it. Let's look at a list of tasks like this one: 1-Mop Floors, 2-Vacum Floors 3-Finish paper which is due tomorrow 4- Watch the latest episode of new TV show 5-Get that a cough checked out. Working on that list in that order probably won't end well. By the time you've mopped and vacuumed the floors, you'll barely have time to finish your paper, and even if you manage that, you probably won't manage to get that cough checked out. What we need is to prioritize this list.", 20, "white");
+var Lesson_Text_2 = new sjs.Text("The best way to prioritize this list is to re-arrange as follows, and then do the tasks in order. 1-Get that cough checked out, 2- Finish paper which is due tomorrow, 3-Mop floors, 4-Vacum floors, 5-Watch latest episode of the new TV show. If you really want to get it done, you could take your writing device(s) to the doctor's, and write in the waiting room. You could switch the mopping and vacuuming of the floors, but apart from that, that's probably the best order to do it in.", 20, "white");
+Lesson_Text_2.moveTo(Lesson_Text.getX(), Lesson_Text.getY()+150);
+var Lesson_Text_3 = new sjs.Text("Now, of course, that's a fairly obvious list to prioritize, most people agree that not getting sick with a whooping cough is more important than having a clean floor. In real life, some of these lists will probably be a little harder to prioritize, but hopefully, you should be able to apply some of the same logic we applied here to other kinds of situations.", 20, "white");
+Lesson_Text_3.moveTo(Lesson_Text_2.getX(), Lesson_Text_2.getY()+150);
+var Lesson_Text_4 = new sjs.Text("Further reading: https://www.wrike.com/blog/how-to-work-effectively-13-strategies/ https://www.coachingpositiveperformance.com/17-essential-time-management-skills                                                                        /https://www.inc.com/john-rampton/15-ways-to-increase-productivity-at-work.html", 20 , "white");
+Lesson_Text_4.moveTo(Lesson_Text_3.getX(), Lesson_Text_3.getY()+150);
+
+var Lesson_Text_5 = new sjs.Text("Think you've got it? Try the next game by pressing Prioritize to see if you've really got this prioritizing thing.", 20, "white");
+Lesson_Text_5.moveTo(Lesson_Text_4.getX(), Lesson_Text_4.getY()+150);
+
+var Priortize_Button = new sjs.Button("Prioritize", function(){
+	window.location = "Priortize2.html";
+});
+Priortize_Button.center();
+Priortize_Button.bottom();
+var Back_Button = new sjs.Button("Back",function(){
+	window.location = "AZCodeChallenge2018_File-3.html";
+});
+Back_Button.bottom();
+Back_Button.left();
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

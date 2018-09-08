@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/rodionkutsaev82627.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight())
+var S1P = new sjs.Image("Images/sign.png");
+var S1B = new sjs.Button("Organization.", function(){
+
+	window.location = "Organized.html";
+});
+S1P.center();
+S1P.left();
+S1B.moveTo(S1P.getX(), S1P.getY()+120);
+var S2P = new sjs.Image("Images/Calander.png");
+S2P.moveTo(S1P.getX()+170,S1P.getY());
+var S2B = new sjs.Button("Scheduling.", function(){
+	window.location = "Schedule.html";
+});
+S2P.center();
+S2B.moveTo(S2P.getX(), S2P.getY()+120);
+var Back_Button = new sjs.Button("Back",function(){
+	window.location = "AZCodeChallenge2018_File-3.html";
+});
+Back_Button.bottom();
+Back_Button.left();
+
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

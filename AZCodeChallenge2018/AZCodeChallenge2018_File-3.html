@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/rodionkutsaev82627.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+//Creates buttons and pictures.
+var S1P = new sjs.Image("Images/time.png");
+var S1B = new sjs.Button("Time mangement.", function(){
+
+	window.location = "Time_Management.html";
+});
+S1B.moveTo(S1P.getX(), S1P.getY()+120);
+var S2P = new sjs.Image("Images/Telephone.png");
+S2P.moveTo(S1P.getX()+170,S1P.getY());
+var S2B = new sjs.Button("Ignoring distractions.", function(){
+	window.location = "Ignoring_distractions.html";
+});
+S2B.moveTo(S2P.getX(), S2P.getY()+120);
+var S3P = new sjs.Image("Images/Card_file.png");
+S3P.moveTo(S2P.getX()+190,S2P.getY());
+var S3B = new sjs.Button("Trimming down tasks.", function(){
+	window.location = "Trimming.html";
+});
+S3B.moveTo(S3P.getX(), S3P.getY()+120);
+
+var S4P = new sjs.Image("Images/AppIcon60x60@2x.png");
+S4P.moveTo(S3P.getX()+200,S3P.getY());
+var S4B = new sjs.Button("Prioritizing.", function(){
+	window.location = "Priortizing.html";
+});
+S4B.moveTo(S4P.getX(), S4P.getY()+120);
+//Creates and displays coin value.
+var coins = 100;
+coins = localStorage.getItem("coins");
+var coins_display_text = new sjs.Text("Coins:"+ coins, 25, "yellow");
+coins_display_text.right();
+var coins_display_image = new sjs.Image("Images/Money.png");
+coins_display_image.setSize(50,50);
+coins_display_image.moveTo(coins_display_text.getX()-50, coins_display_text.getY());
+localStorage.setItem("coins", coins);
+
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.
+Image credit: App Brewery Massive Bundle  </p>
+</body> 
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/rodionkutsaev82627.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+
+var Lesson_Text  = new sjs.Text("Being organized. It eludes us all. Whether it's our houses or our minds, some part of us is always disorganized. Effective people don't have to hunt around for 20 minutes to find their car keys(Or so I hear :)). They are able to hand you something from their desk within seconds not hours. More importantly, they know where everything is, all the time.",25, "white");
+var Lesson_Text_2 = new sjs.Text("One other important benefit of organization is the capturing of every commitment you make. You don't forget it because it slipped your mind and you lost that piece of paper that you wrote it down on. You'll remember every meeting(consider cutting down on those to be more effective), lunch, luncheon, and dinner with family and co-workers(even if you don't want to ;)).",25, "white");
+Lesson_Text_2.moveTo(Lesson_Text.getX(), Lesson_Text.getY()+150);
+var Lesson_Text_3 = new sjs.Text("Further reading: https://www.wrike.com/blog/how-to-work-effectively-13-strategies/ https://www.coachingpositiveperformance.com/17-essential-time-management-skills                                                                        /https://www.inc.com/john-rampton/15-ways-to-increase-productivity-at-work.html", 20 , "white");
+Lesson_Text_3.moveTo(Lesson_Text_2.getX(), Lesson_Text_2.getY()+150);
+
+var Lesson_Text_4 = new sjs.Text("Think you've got it? Try the next game by pressing Organize to see if you've really got this organizing thing.", 20, "white");
+Lesson_Text_4.moveTo(Lesson_Text_3.getX(), Lesson_Text_3.getY()+150);
+
+var Orginize_Button = new sjs.Button("Organize", function(){
+	window.location = "Orginize.html";
+});
+Orginize_Button.center();
+Orginize_Button.bottom();
+var Back_Button = new sjs.Button("Back",function(){
+	window.location = "AZCodeChallenge2018_File-3.html";
+});
+Back_Button.bottom();
+Back_Button.left();
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:black; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

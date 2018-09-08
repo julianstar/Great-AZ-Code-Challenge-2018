@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+function format_string(strings, number){ 
+	console.log(strings[0]);
+	return `${strings[0]}${number}}`
+};
+var background = new sjs.Image("Images/Important.png");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var coins = localStorage.getItem("coins");
+coins = parseInt(coins);
+var coins_txt = new sjs.Text("Coins:"+ coins, 25, "yellow");
+coins_txt.right();
+var explain_text = new sjs.Text("You are doing something important on your computer. Your task is to ignore distractions for 30 seconds. For every distraction you ignore, you get coins. Give in to any distractions, and you lose. Checking for voicemail is okay. Good luck!");
+setTimeout(function(){
+
+explain_text.destroy();
+
+	},5000);
+var timer = 0; 
+setInterval(function(){
+timer = timer + 1;
+if(timer == 30){
+	window.location = "Wind.html";
+
+}
+if(timer == 5){
+	var x = Math.random();
+	if(x > .5){
+		var phone_ring = new sjs.Text("Buzz, buzz. Your phone's ringing. What do you do?", 25, "black");
+		phone_ring.center();
+		var pick_it_up_Button = new sjs.Button("Pick it up.", function(){
+			window.location = "losed.html";
+		});
+		pick_it_up_Button.moveTo(phone_ring.getX()+50, phone_ring.getY()+50);
+		var leave_it_button = new sjs.Button("Leave it.", function(){
+			leave_it_button.destroy();
+			pick_it_up_Button.destroy();
+			phone_ring.destroy();
+			console.log(typeof coins);
+			coins = parseInt(coins) + 25;
+			//coins_txt.setText("Coins"+coins, 25,"yellow");
+			var z = format_string`Coins${coins}`
+			coins_txt.setText(z);
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+
+		});
+		leave_it_button.moveTo(phone_ring.getX()+50, pick_it_up_Button.getY()+50);
+
+	};
+};
+if(timer == 10){
+	var x = Math.random();
+	if(x > .5){
+		var phone_ring = new sjs.Text("Buzz. Your phone buzzed. Is it a text? What do you do?", 25, "black");
+		phone_ring.center();
+		var pick_it_up_Button = new sjs.Button("Pick it up.", function(){
+			window.location = "losed.html";
+		});
+		pick_it_up_Button.moveTo(phone_ring.getX()+50, phone_ring.getY()+50);
+		var leave_it_button = new sjs.Button("Leave it.", function(){
+			leave_it_button.destroy();
+			pick_it_up_Button.destroy();
+			phone_ring.destroy();
+			console.log(coins);
+			coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+coins);
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+		});
+		leave_it_button.moveTo(phone_ring.getX()+50, pick_it_up_Button.getY()+50);
+
+	};
+};
+if(timer == 15){
+	var x = Math.random();
+	if(x > .5){
+		var new_mail = new sjs.Text("Ding. New mail. Subject: Not related to current project. What do you do?", 25, "black");
+		new_mail.center();
+		var read_it_Button = new sjs.Button("Read it.", function(){
+			window.location = "losed.html";
+		});
+		read_it_Button.moveTo(new_mail.getX()+50, new_mail.getY()+50);
+		var leave_it_button = new sjs.Button("Ignore it.", function(){
+			leave_it_button.destroy();
+			read_it_Button.destroy();
+			new_mail.destroy();
+			console.log(coins);
+			coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+		});
+		leave_it_button.moveTo(new_mail.getX()+50, read_it_Button.getY()+50);
+
+	};
+};
+if(timer == 20){
+	var x = Math.random();
+	if(x > .33){
+		var new_mail = new sjs.Text("New voicemail. What do you do?", 25, "black");
+		new_mail.center();
+		var listen_to_it_Button = new sjs.Button("Listen to it.", function(){
+			new_mail.destroy();
+			listen_to_it_Button.destroy();
+			leave_it_button.destroy();
+			coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			localStorage.setItem("coins", coins);
+		});
+		listen_to_it_Button.moveTo(new_mail.getX()+50, new_mail.getY()+50);
+		var leave_it_button = new sjs.Button("Ignore it.", function(){
+			leave_it_button.destroy();
+			listen_to_it_Button.destroy();
+			new_mail.destroy();
+			console.log(coins);
+			coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+		});
+		leave_it_button.moveTo(new_mail.getX()+50, listen_to_it_Button.getY()+50);
+
+	};
+};
+if(timer == 23){
+	var x = Math.random();
+	if(x > .5){
+		var phone_ring = new sjs.Text("Buzz, buzz. Your phone's ringing. What do you do?", 25, "black");
+		phone_ring.center();
+		var pick_it_up_Button = new sjs.Button("Pick it up.", function(){
+			window.location = "losed.html";
+		});
+		pick_it_up_Button.moveTo(phone_ring.getX()+50, phone_ring.getY()+50);
+		var leave_it_button = new sjs.Button("Leave it.", function(){
+			leave_it_button.destroy();
+			pick_it_up_Button.destroy();
+			phone_ring.destroy();
+			console.log(coins);
+			coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+		});
+		leave_it_button.moveTo(phone_ring.getX()+50, pick_it_up_Button.getY()+50);
+
+	};
+};
+if(timer == 25){
+	var x = Math.random();
+	if(x > .5){
+		var phone_ring = new sjs.Text("Buzz. Your phone buzzed. Is it a text? What do you do?", 25, "black");
+		phone_ring.center();
+		var pick_it_up_Button = new sjs.Button("Pick it up.", function(){
+			window.location = "losed.html";
+		});
+		pick_it_up_Button.moveTo(phone_ring.getX()+50, phone_ring.getY()+50);
+		var leave_it_button = new sjs.Button("Leave it.", function(){
+			leave_it_button.destroy();
+			pick_it_up_Button.destroy();
+			phone_ring.destroy();
+			console.log(coins);
+			coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+		});
+		leave_it_button.moveTo(phone_ring.getX()+50, pick_it_up_Button.getY()+50);
+
+	};
+};
+if(timer == 27){
+	var x = Math.random();
+	if(x > .5){
+		var new_mail = new sjs.Text("Ding. New mail. Subject: Not related to current project. What do you do?", 25, "black");
+		new_mail.center();
+		var read_it_Button = new sjs.Button("Read it.", function(){
+			window.location = "losed.html";
+		});
+		read_it_Button.moveTo(new_mail.getX()+50, new_mail.getY()+50);
+		var leave_it_button = new sjs.Button("Ignore it.", function(){
+			leave_it_button.destroy();
+			read_it_Button.destroy();
+			new_mail.destroy();
+			console.log(coins);
+			coins = parseInt(coins) + 25;
+			// coins_txt.setText("Coins"+coins);
+			coins_txt.setText(`Coins${coins}`);
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+		});
+		leave_it_button.moveTo(new_mail.getX()+50, read_it_Button.getY()+50);
+
+	};
+};
+},1000);localStorage.setItem("coins", coins);
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:blue; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/francesco-gallarotti-2497.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var coins = localStorage.getItem("coins");
+var coins_txt = new sjs.Text("Coins:"+ parseInt(coins), 25, "yellow");
+coins_txt.right();
+var You_won_Text = new sjs.Text("You lost, you picked the wrong choice! Better luck next time!");
+You_won_Text.center();
+var Replay_Button = new sjs.Button("Play again.", function(){
+	window.location = "Schedule2.html";
+});
+Replay_Button.center();
+Replay_Button.bottom();
+var Menu_Button = new sjs.Button("Menu.",function(){
+	window.location = "AZCodeChallenge2018_File-3.html";
+});
+Menu_Button.bottom();
+
+
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

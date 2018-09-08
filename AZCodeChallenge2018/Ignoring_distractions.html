@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/francesco-gallarotti-2497.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+//Makes lesson text.
+/*
+Discovery! Discovery! Discovery!
+Sorry, you'll have to forgive my excxitment. I just found out that if you don't put in a size and collor for the text it just makes it around 20(I think) and black, which is what I like! Yay! Less work is always better. This was a very exciting moment for me. :) 
+*/
+var Lesson_Text = new sjs.Text("Ignoring distractions in the workplace can really help you be more effective. What qualifies as a distraction? Anything that takes you off your work, and isn't related. That text from a friend, that co-worker poking her head into your office, or that e-mail about another project are all distractions to be ignored. What does that mean? It means closing your door, turning your phone off and not picking it up when it beeps or buzzes, and not paying attention to the e-mail unrelated to what you're working on. ")
+var Lesson_Text_2 = new sjs.Text("Right now you might be asking something like, 'Well, what if my Mother is sick and needs me, so the hospital calls me, but I have my phone off and I don't look at it until lunch! What about my Mom?' A solution to this is to not turn it off, per se, but to ignore texts, and look at the caller ID on calls. If it's someone you know, you can pick up, and if they're fine, just let them go. Have a policy of a 5 minute, at most, call with friends. Try to get them off the phone as soon as possible. Or, better yet, just wait and see if they leave a voicemail, and if they do, listen to it. If it's something important, people always leave a voicemail. If they don't it's probably something mundane. ");
+Lesson_Text_2.moveTo(Lesson_Text.getX(), Lesson_Text.getY()+150);
+var Lesson_Text_3 = new sjs.Text("Further reading: https://www.wrike.com/blog/how-to-work-effectively-13-strategies/ https://www.coachingpositiveperformance.com/17-essential-time-management-skills                                                                        /https://www.inc.com/john-rampton/15-ways-to-increase-productivity-at-work.html");
+Lesson_Text_3.moveTo(Lesson_Text_2.getX(), Lesson_Text_2.getY()+150);
+Lesson_Text_4 = new sjs.Text("Press continue when you're ready to start the game. May the odds be ever in your favor!")
+Lesson_Text_4.moveTo(Lesson_Text_3.getX(), Lesson_Text_3.getY()+150);
+//Button code.
+var continue_button = new sjs.Button("Continue.", function(){
+	window.location = "Ignoring_distractions_2.html";
+});
+continue_button.center();
+continue_button.bottom();
+var back_button = new sjs.Button("Back.", function(){
+	window.location = "AZCodeCHallenge2018_File-3.html";
+});
+back_button.bottom();
+back_button.left();
+
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.
+Image credit: App Brewery Massive Bundle  </p>
+</body> 
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDnwNfN1-3qLcOcD565nGO7tHUGIfcvPO98-jTw-wqOLP0hTtNkw");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var Lesson_Text_1 = new sjs.Text("Scheduling. Some people have trouble keeping to a schedule. That's fine. But, if you have a 20 item long to-do list the then a schedule might be a better option. Be realistic about your time you can't get 20 2 hour tasks done in 1 day. Nor, most likely 2 days. Make a schedule of some of the things on your to-do list to do now, and start working your way through that to-do list. Make sure to prioritize your schedule, don't put the un-important things on there first, start with the important things. But that's in the lesson on prioritizing. ");
+var Lesson_Text_2 = new sjs.Text("You're probably wondering, 'what should I put on my schedule besides tasks?' 'What sort of tasks?' Those are very good questions! Will, to start, you should include breaks(for more than meals), meals, and some leeway in case things don't go quite according to plan. Also, as for what sort of tasks, it's whatever tasks you have to do.")
+var Lesson_Text_3 = new sjs.Text("Further reading: https://www.wrike.com/blog/how-to-work-effectively-13-strategies/ https://www.coachingpositiveperformance.com/17-essential-time-management-skills                                                                        /https://www.inc.com/john-rampton/15-ways-to-increase-productivity-at-work.html");
+Lesson_Text_2.moveTo(Lesson_Text_1.getX(), Lesson_Text_1.getY()+150);
+Lesson_Text_3.moveTo(Lesson_Text_2.getX(), Lesson_Text_2.getY()+150);
+
+var Lesson_Text_4 = new sjs.Text("Think you've got it? Try the next game by pressing Schedule to see if you've really got this scheduling thing.");
+Lesson_Text_4.moveTo(Lesson_Text_3.getX(), Lesson_Text_3.getY()+150);
+
+var Schedule_Button = new sjs.Button("Schedule", function(){
+	window.location = "Schedule2.html";
+});
+
+Schedule_Button.center();
+Schedule_Button.bottom();
+var Back_Button = new sjs.Button("Back",function(){
+	window.location = "AZCodeChallenge2018_File-3.html";
+});
+Back_Button.bottom();
+Back_Button.left();
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js. Image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDnwNfN1-3qLcOcD565nGO7tHUGIfcvPO98-jTw-wqOLP0hTtNkw  </p>
+</body> 
+</html>

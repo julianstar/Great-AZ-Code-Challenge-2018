@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	/*
+	A few notes:
+	#1. = Typos in the file names. All of the text has been through a  spellchecker, however file names have not. I apologize for any typos in the file names.
+	#2. = Known bugs. == 1. In the ignoring distractions, the first distraction, if you choose to ingore it, you'll get a curly bracket next to the coin value. I haven't seen a way to fix that and it goes away next time you get coins.
+	#3. = There are some string... somethings in the ignoring distractions code. Those were meant to help fix a bug. I think some of them aren't helping, but I don't know, so I'm not going to take them out. 
+	I hope you all like it! Thank you for judging!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 800,500);
+var background = new sjs.Image("Images/rodionkutsaev82627.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var intro_text = new sjs.Text("Hello! Welcome to Effective, a website designed to make you more effective in a fun and quick way! Click the start button now to begin. ", 20, "white");
+intro_text.center();
+//Creates start button.
+var Start_Button = new sjs.Button("Start!", function(){
+	window.location = "AZCodeChallenge2018_File-2.html";
+});
+//Moves the start button to the text's x + 350 pixels and y - 100.
+Start_Button.moveTo(intro_text.getX()+350, intro_text.getY()+100);
+
+
+
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:blue; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

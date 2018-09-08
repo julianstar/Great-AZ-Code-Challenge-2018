@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/rodionkutsaev82627.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var coins = localStorage.getItem("coins");
+coins = parseInt(coins);
+var coins_txt = new sjs.Text("Coins:"+ coins, 25, "yellow");
+coins_txt.right();
+var schedule_1 = new sjs.Text("Eat Breakfast.                                                                                                                                Watch TV for 2 hours.                                                                                                                                                       Do work for 1 hour.                                                                                                                                                       Have lunch.                                                                                                                                                                Work for 5 hours.                                                                                                                                                          Have dinner.");
+schedule_1.center();
+schedule_1.top();
+var schedule_2 = new sjs.Text("Eat breakfast.                                                                                                                                 Work for 3 hours with 5 min breaks every 55 mins.                                                                                                                         Have lunch.                                                                                                                                                               Work for 4 hours with 5 min breaks every 55 mins.                                                                                                                        Have dinner.");
+schedule_2.center();
+var schedule_3 = new sjs.Text("Eat breakfast.                                                                                                                                Watch Tv for 3 hours.                                                                                                                                                    Have lunch.                                                                                                                                                               Work for 9 hours with 10 min breaks every 30 mins.                                                                                                                          Have dinner.");
+schedule_3.center();
+schedule_3.bottom();
+var Schedule1Buttton = new sjs.Button("Pick this one!", function(){
+	window.location = "loses.html";
+});
+Schedule1Buttton.moveTo(schedule_1.getX(), schedule_1.getY()+50);
+var Schedule2Button = new sjs.Button("Pick this one!", function(){
+	coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+	window.location = "wins.html";
+});
+Schedule2Button.moveTo(schedule_2.getX(), schedule_2.getY()+50);
+var Schedule3Button = new sjs.Button("Pick this one!", function(){
+	window.location = "loses.html";
+});
+Schedule3Button.moveTo(schedule_3.getX(), schedule_3.getY()-50);
+var explain_Text = new sjs.Text("Your task, should you choose to accept it, is to pick the best schedule.");
+explain_Text.moveTo(schedule_2.getX(), schedule_2.getY()-50);
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

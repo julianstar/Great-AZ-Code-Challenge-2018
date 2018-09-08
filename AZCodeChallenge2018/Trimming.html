@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/math-83287.jpg");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var Lesson_Text = new sjs.Text("Ever had a list of tasks like this: Start prioritizing, scheduling, organizing, time management, trimming down tasks, and fix the bug about coins in ignoring distractions. No? Never? It is a weird list, I'll give you that. Oh right, and there's a time limit on that. If you've ever had lists like that, you might have felt overwhelmed, wished that you could have less to do, or wonder how you'll be able to do it all in such a short amount of time. Will, this is where trimming down your task list can help..", 20, "white");
+var Lesson_Text_2 = new sjs.Text("'So,' you're probably wondering, 'what exactly is 'trimming down my task list, and how can it help?' Good question. Will, trimming down your task list is just what it sounds like. Instead of saying, 'I need to get 10 2 hour tasks done today! Ahhhhh!' say, 'Will, I would like to get 10 2 hour tasks done today, but that's just not practical, so I'll pick the 3-5 most important to do today, and if I can do more, I will.", 20, "white");
+Lesson_Text_2.moveTo(Lesson_Text.getX(), Lesson_Text.getY()+150);
+var Lesson_Text_3 = new sjs.Text("Further reading: https://www.wrike.com/blog/how-to-work-effectively-13-strategies/ https://www.coachingpositiveperformance.com/17-essential-time-management-skills                                                                        /https://www.inc.com/john-rampton/15-ways-to-increase-productivity-at-work.html", 20 , "white");
+Lesson_Text_3.moveTo(Lesson_Text_2.getX(), Lesson_Text_2.getY()+150);
+var Lesson_Text_4 = new sjs.Text("Think you've got it? Try the next game by pressing Trim to see if you've really got it.", 20, "white");
+Lesson_Text_4.moveTo(Lesson_Text_3.getX(), Lesson_Text_3.getY()+150);
+
+var Trim_Button = new sjs.Button("Trim.", function(){
+	window.location = "Trimming_2.html";
+});
+Trim_Button.center();
+Trim_Button.bottom();
+var Back_Button = new sjs.Button("Back",function(){
+	window.location = "AZCodeChallenge2018_File-3.html";
+});
+Back_Button.bottom();
+Back_Button.left();
+}
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js.  </p>
+</body> 
+</html>

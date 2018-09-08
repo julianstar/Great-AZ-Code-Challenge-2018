@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<title> AZCodeChallengeProject(Working title). </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start () {
+	/*
+	Hello, and welcome to my project for the Great AZ Code Challenge 2018. I assume that you've gone through the website. You might wonder why it's essentally a game. That's because that's pretty much all I know how to code. I know a little html, I learned some CSS, although I've since forgotten all of it, so most of what I know is JavaScript, and the idea that came to me was, at its heart, a game. I hope you like it! Thank you for reading! Now, on to the code!
+	*/
+	//Establishes window for interacting.
+sjs.open("target", 1050,750);
+var background = new sjs.Image("Images/Space4.png");
+background.setSize(sjs.getWidth(), sjs.getHeight());
+var coins = localStorage.getItem("coins");
+coins = parseInt(coins);
+var coins_txt = new sjs.Text("Coins:"+ coins, 25, "yellow");
+coins_txt.right();
+coins_txt.bottom();
+var explain_text = new sjs.Text("Your job is too elimanate all but 3 tasks from your to-do list. You do this using your spaceship, which you move around with the WASD keys. Te destroy tasks you launch a missile at them, which is accomplished by pressing the spacebar. Don't elimante the wrong tasks! Good luck!", 25, "white");
+explain_text.bottom();
+setTimeout(function(){
+
+explain_text.destroy();
+
+	},5000);
+var task7destroyed = false;
+var task6destroyed = false;
+var task5destroyed = false;
+var task4destroyed = false;
+var task76destroyed = false;
+var task54destroyed = false;
+//Makes tasks. Tasks are named as follows: var taskvx, where x is a natural number. V stands for value and works like the DEFCON system, lower is more important.
+var taskv1 = new sjs.Text("Go to the doctor's.", 20, "white");
+taskv1.center();
+taskv1.type = "task1";
+var taskv2 = new sjs.Text("Turn in paper which is due tommorow.", 20, "white");
+taskv2.right();
+taskv2.type = "task2";
+var taskv3 = new sjs.Text("Visit ailing Grandmother.", 20, "white");
+taskv3.type = "task3";
+var taskv4 = new sjs.Text("Mop floors.", 20, "white");
+taskv4.center();
+taskv4.left();
+taskv4.type = "task4";
+var taskv5 = new sjs.Text("Sweep floors.", 20, "white");
+taskv5.center()
+taskv5.right();
+taskv5.type = "task5";
+var taskv6 = new sjs.Text("Watch movie.", 20, "white");
+taskv6.center();
+taskv6.top();
+taskv6.type = "task6";
+var taskv7 = new sjs.Text("Eat chips.", 20, "white");
+taskv7.moveTo(taskv1.getX(), taskv1.getY()-100);
+taskv7.type = "task7";
+
+//Creates players ship.
+//Player code.
+var Player = new sjs.Image("Images/battleship_right.png");
+Player.moveTo(taskv1.getX(), taskv1.getY()+100);
+Player.setSize(100,100);
+
+
+sjs.keyDown(UP_KEY, function(){
+	Player.pushUp();
+	
+});
+sjs.keyDown(DOWN_KEY, function(){
+	Player.pushDown();
+	
+});
+sjs.keyDown(RIGHT_KEY, function(){
+	Player.pushRight();
+
+});
+sjs.keyDown(LEFT_KEY, function(){
+	Player.pushLeft();
+	
+});
+//Player shooting code.
+var Fire = true;
+sjs.keyDown(SPACE_KEY, function(){
+	if(Fire == true){
+		Fire = false;
+	var PMissile = new sjs.Image("Images/P1 missile.png");
+	PMissile.setSize(100,100);
+	PMissile.moveTo(Player.getX(), Player.getY()-10);
+	PMissile.pushUp(10);
+	PMissile.friction = 0;
+	PMissile.type = "Missile";
+	PMissile.noBounds = true;
+	setTimeout(function(){
+		PMissile.accel = 1;
+	},1000);
+	PMissile.accel = 0;	
+	
+	setTimeout(function(){
+		Fire = true;
+	},1000)
+	}
+	
+});	
+
+
+Player.friction = 0;
+Player.accel = .09;
+sjs.onHit("task7", "Missile", function(x,y){
+	x.destroy();
+	y.destroy();
+	task7destroyed = true;
+	console.log(task7destroyed);
+	coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+});
+sjs.onHit("task6", "Missile", function(x,y){
+	x.destroy();
+	y.destroy();
+	task6destroyed = true;
+	console.log(task6destroyed);
+	coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+});
+sjs.onHit("task5", "Missile", function(x,y){
+	x.destroy();
+	y.destroy();
+	task5destroyed = true;
+	console.log(task5destroyed);
+	coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+});
+sjs.onHit("task4", "Missile", function(x,y){
+	x.destroy();
+	y.destroy();
+	task4destroyed = true;
+	console.log(task4destroyed);
+	coins = parseInt(coins) + 25;
+			coins_txt.setText("Coins"+ coins, 25,"yellow");
+			console.log(coins);
+			localStorage.setItem("coins", coins);
+});
+sjs.onHit("task3", "Missile", function(x,y){
+	window.location = "Loset.html";
+});
+sjs.onHit("task2", "Missile", function(x,y){
+	window.location = "Loset.html";
+});
+sjs.onHit("task1", "Missile", function(x,y){
+	window.location = "Loset.html";
+});
+setInterval(function(){
+if(task7destroyed == true && task6destroyed == true){
+	task76destroyed = true;
+	console.log(task76destroyed);
+}
+if(task5destroyed == true && task4destroyed == true){
+	task54destroyed = true;
+	console.log(task54destroyed);
+}
+if(task76destroyed == true && task54destroyed == true){
+	window.location = "wint.html";
+}
+},1000);
+
+};
+
+</script> 
+</head> 
+<body onload = "start()"> 
+<div id="target" style="overflow:hidden; background-color:yellow; margin:auto;"></div> 
+<p>Made in Sublime Text, by Julian O'Connor, with the libary located at: https://simplycodingcourses.com/files/simplyjs/simply.js. Images from: Simply Stem.  </p>
+</body> 
+</html>
